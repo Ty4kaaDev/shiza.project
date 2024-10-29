@@ -1,29 +1,47 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
-import { Advertiser } from './advertiser.model';
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class AdPost {
-  @PrimaryGeneratedColumn()
-  id: number;
+    @PrimaryGeneratedColumn()
+    id: number
 
-  @ManyToOne(() => Advertiser, (advertiser) => advertiser.id)
-  advertiser: Advertiser;
+    @Column()
+    authorId: number
 
-  @Column()
-  title: string;
+    @Column()
+    name: string
 
-  @Column()
-  content: string;
+    @Column()
+    url: string
 
-  @Column()
-  imageUrl: string;
+    @Column({
+        default: 0
+    })
+    subscriders: number
 
-  @Column()
-  linkUrl: string;
+    @Column({
+        default: new Date()
+    })
+    dateExit: Date = new Date()
 
-  @Column()
-  createdAt: Date;
+    @Column({
+        default: "qweklfqweklf"
+    })
+    ytm: string = "qweklfqweklf"
 
-  @Column()
-  updatedAt: Date;
+    @Column({
+        default: 0
+    })
+    cpm: number = 0
+
+    @Column()
+    formatHour1: number
+
+    @Column()
+    formatHour2: number
+
+    @Column({
+        default: 0
+    })
+    clicks: number = 0
 }

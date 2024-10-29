@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { AdvertiserModule } from './advertiser/advertiser.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ClickHouseModule } from '@md03/nestjs-clickhouse';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -15,7 +16,7 @@ import { ClickHouseModule } from '@md03/nestjs-clickhouse';
       username: 'postgres',
       password: 'postgres',
       database: 'mydatabase',
-      entities: ['dist/**/*.entity{.ts,.js}'],
+      entities: ['dist/**/*.model{.ts,.js}'],
       synchronize: true,
     }),
     ClickHouseModule.forRootAsync({
@@ -26,6 +27,7 @@ import { ClickHouseModule } from '@md03/nestjs-clickhouse';
         password: 'password',
       }),
     }),
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
