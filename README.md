@@ -1,6 +1,7 @@
 Shiza.Project Ugadaika.com 
 
 docker compose up -d && npm run dev
+
 ya ebal chto-to delat' bez norm tz 
 
 ```
