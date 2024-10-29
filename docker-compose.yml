@@ -1,0 +1,20 @@
+version: '3'
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server
+    ports:
+      - 8123:8123
+    environment:
+      CLICKHOUSE_USER: user
+      CLICKHOUSE_PASSWORD: password
+      CLICKHOUSE_DATABASE: default
+    volumes:
+      - ./data:/var/lib/clickhouse
+  postgresql:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mydatabase
