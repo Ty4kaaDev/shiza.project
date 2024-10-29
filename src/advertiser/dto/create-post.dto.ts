@@ -1,15 +1,15 @@
-import { IsObject, IsString } from "class-validator";
+import { IsObject, IsString } from 'class-validator';
 
 export class CreatePostDTO {
     @IsString()
-    name: string
+    name: string;
 
     @IsString()
-    url: string
+    url: string;
 
     @IsObject()
     formatHour: {
-        formatHour1: number,
-        formatHour2: number
-    }
+        formatHour1: number;
+        formatHour2: number;
+    };
 }

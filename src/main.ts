@@ -5,13 +5,12 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
-    const app = await NestFactory.create< NestExpressApplication >(
-        AppModule,
-        { cors: true} 
-    );  
-    app.use( json( { limit: '30mb' } ) );
+    const app = await NestFactory.create<NestExpressApplication>(AppModule, {
+        cors: true,
+    });
+    app.use(json({ limit: '30mb' }));
     app.enableCors();
-    app.useGlobalPipes( new ValidationPipe() );
+    app.useGlobalPipes(new ValidationPipe());
     await app.listen(3000);
 }
 bootstrap();

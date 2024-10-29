@@ -5,8 +5,8 @@ import { LazyModule } from 'src/lazy/lazy.module';
 import { UserService } from 'src/user/user.service';
 
 @Module({
-  imports: [LazyModule],
-  controllers: [AdvertiserController],
-  providers: [AdvertiserService, UserService]
+    imports: [LazyModule],
+    controllers: [AdvertiserController],
+    providers: [AdvertiserService, UserService],
 })
 export class AdvertiserModule {}

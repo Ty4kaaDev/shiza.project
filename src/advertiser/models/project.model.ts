@@ -1,26 +1,25 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Project{
+export class Project {
     @PrimaryGeneratedColumn()
-    id: number
+    id: number;
 
     @Column()
-    agreement: string
+    agreement: string;
 
     @Column()
-    agreementNumber: number
+    agreementNumber: number;
 
     @Column()
-    startDate: Date
+    startDate: Date;
 
     @Column()
-    endDate: Date
+    endDate: Date;
 
     @Column()
-    budget: number
+    budget: number;
 
     @Column()
-    spent: number
-    
+    spent: number;
 }

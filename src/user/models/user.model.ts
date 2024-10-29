@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 export interface UserJwt {
     sub: number;
@@ -9,16 +9,16 @@ export interface UserJwt {
 @Entity()
 export class User {
     @PrimaryGeneratedColumn()
-    id: number
+    id: number;
 
     @Column()
-    login: string
+    login: string;
 
     @Column()
-    password: string
+    password: string;
 
     @Column({
         default: 0,
     })
-    balance: number = 0
-} 
+    balance: number = 0;
+}

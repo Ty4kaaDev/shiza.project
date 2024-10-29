@@ -1,47 +1,47 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class AdPost {
     @PrimaryGeneratedColumn()
-    id: number
+    id: number;
 
     @Column()
-    authorId: number
+    authorId: number;
 
     @Column()
-    name: string
+    name: string;
 
     @Column()
-    url: string
+    url: string;
 
     @Column({
-        default: 0
+        default: 0,
     })
-    subscriders: number
+    subscriders: number;
 
     @Column({
-        default: new Date()
+        default: new Date(),
     })
-    dateExit: Date = new Date()
+    dateExit: Date = new Date();
 
     @Column({
-        default: "qweklfqweklf"
+        default: 'qweklfqweklf',
     })
-    ytm: string = "qweklfqweklf"
+    ytm: string = 'qweklfqweklf';
 
     @Column({
-        default: 0
+        default: 0,
     })
-    cpm: number = 0
+    cpm: number = 0;
 
     @Column()
-    formatHour1: number
+    formatHour1: number;
 
     @Column()
-    formatHour2: number
+    formatHour2: number;
 
     @Column({
-        default: 0
+        default: 0,
     })
-    clicks: number = 0
+    clicks: number = 0;
 }

@@ -3,29 +3,28 @@ import {
     ExecutionContext,
     Injectable,
     UnauthorizedException,
-  } from '@nestjs/common';
+} from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-  import { JwtService } from '@nestjs/jwt';
-  import { Request } from 'express';
+import { JwtService } from '@nestjs/jwt';
+import { Request } from 'express';
 import { User, UserJwt } from 'src/user/models/user.model';
 import { UserService } from 'src/user/user.service';
-  
+
 export interface UserRequest extends Request {
     payload: UserJwt;
     user: User;
     token: string;
 }
 
-  @Injectable()
-  export class AuthGuard implements CanActivate {
+@Injectable()
+export class AuthGuard implements CanActivate {
     constructor(
         private jwtService: JwtService,
         private reflector: Reflector,
-        private userService: UserService
+        private userService: UserService,
     ) {}
 
     async canActivate(context: ExecutionContext): Promise<boolean> {
-
         const skipCheck = this.reflector.get<boolean>(
             'skipToken',
             context.getHandler(),
@@ -51,9 +50,9 @@ export interface UserRequest extends Request {
         }
         return true;
     }
-  
+
     private extractTokenFromHeader(request: Request): string | undefined {
-      const [type, token] = request.headers.authorization?.split(' ') ?? [];
-      return type === 'Bearer' ? token : undefined;
+        const [type, token] = request.headers.authorization?.split(' ') ?? [];
+        return type === 'Bearer' ? token : undefined;
     }
-  }
+}

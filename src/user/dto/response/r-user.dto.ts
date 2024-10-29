@@ -1,21 +1,20 @@
-import { IsNumber, IsObject, IsString } from "class-validator";
+import { IsNumber, IsObject, IsString } from 'class-validator';
 
 export class RUserDTO {
     @IsNumber()
-    id: number
+    id: number;
 
     @IsString()
-    login: string
+    login: string;
 
     @IsNumber()
-    balance: number
-
+    balance: number;
 }
 
 export class RUserJwtDTO {
     @IsObject()
-    user: RUserDTO
+    user: RUserDTO;
 
     @IsString()
-    token: string
+    token: string;
 }
